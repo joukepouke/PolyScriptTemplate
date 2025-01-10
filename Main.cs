@@ -1,9 +1,10 @@
-﻿namespace PolyScriptTemplate;
+using BepInEx.Logging;
 
+namespace PolyScriptTemplate;
 public static class Main
 {
-    public static void Load()
+    public static void Load(ManualLogSource logger)
     {
-        Console.WriteLine("Here we go!");
+        logger.LogMessage("Here we go!");
     }
 }
