@@ -12,6 +12,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="PolyMod" Version="*" />
+      <ProjectReference Include="..\..\mine\PolyMod\PolyMod.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MSBuildTasks" Version="1.5.0.235">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <PropertyGroup>
+      <ModFilesDir>$(ProjectDir)modFiles\</ModFilesDir>
+      <ZipFile>$(ProjectDir)template.polymod</ZipFile>
+    </PropertyGroup>
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModFilesDir)" />
+    <ItemGroup>
+      <FilesToZip Include="$(ModFilesDir)**\*" />
+    </ItemGroup>
+    <ZipDirectory SourceDirectory="$(ModFilesDir)" DestinationFile="$(ZipFile)" Overwrite="true" />
+  </Target>
 </Project>
