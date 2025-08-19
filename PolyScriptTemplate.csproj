@@ -47,6 +47,6 @@
 
     <Message Text="Deploying $(ZipFile) to $(PolytopiaModsDir)" Importance="high" />
 
-    <Copy SourceFiles="$(ZipFile)" DestinationFolder="$(PolytopiaModsDir)" Overwrite="true" />
+    <Copy SourceFiles="$(ZipFile)" DestinationFolder="$(PolytopiaModsDir)"/>
 </Target>
 </Project>
