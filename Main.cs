@@ -1,4 +1,5 @@
 using BepInEx.Logging;
+using PolyMod;
 
 namespace PolyScriptTemplate;
 public class Main : PolyScriptMod
