@@ -1,10 +1,13 @@
 using BepInEx.Logging;
 
 namespace PolyScriptTemplate;
-public static class Main
+public class Main : PolyScriptMod
 {
-    public static void Load(ManualLogSource logger)
+    public override void Load()
     {
-        logger.LogMessage("Here we go!");
+        this.Logger.LogMessage("Here we go!");
+    }
+    public override void UnLoad()
+    {
     }
 }
