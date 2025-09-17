@@ -12,7 +12,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\mine\PolyMod\PolyMod.csproj" />
+       <PackageReference Include="PolyMod" Version="*" />
     </ItemGroup>
 
     <ItemGroup>
